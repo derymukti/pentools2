@@ -91,7 +91,7 @@ class Create(Command):
 				f.write("@login_require\n")
 				f.write("def insert_something():\n")
 				f.write("	data = request.get_json()\n")
-				f.write("	if(model.insert("+name+",data) is not 'err'):\n")
+				f.write("	if(model.insert('"+name+"',data) is not 'err'):\n")
 				f.write("		return response(data=data,code=201)\n")
 				f.write("	else:\n")
 				f.write("		return response(code=400,message='Failed')\n")
