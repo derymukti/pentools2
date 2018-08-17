@@ -4,7 +4,7 @@ import sys, os, decimal, time, md5, json
 from jose import jwt
 from system.functions_lib import *
 from basicauth import decode
-from flask import session
+from flask import session, jsonify
 from datetime import datetime
 
 def insert(table,data_post,data="Success"):
@@ -73,7 +73,7 @@ def update(table,data_post,data={"status":"Success"}):
         columns = ', '.join(data_post.keys())
         values = '", "'.join(data_post.values())
         placeholders = ', '.join('?' * len(data_post))
-        sql = 'REPLACE INTO %s (%s) VALUES ("%s")' % (table,columns, values)
+        sql = 'REPLACE INTO %s (%s) VALUES ("%s")' % (table,columns, str(values))
         cur = db.query(sql)
        # db.commit()
        # cur.close()     
