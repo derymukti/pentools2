@@ -39,7 +39,6 @@ def select_json(table='',column='*',where='1',value='1',limit='10',order='id',so
         columns = cur.description
         result = [{columns[index][0]: column for index, column in enumerate(value)} for value in cur.fetchall()]
         cur.close()
-        # time.sleep(0.1)
         if result == []:
             # data = {"data":result,"meta":{"code":404,"status":"Data Not Found"}}
             return response(data=result,code=404,message="Data Not Found")
