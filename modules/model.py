@@ -12,7 +12,7 @@ def insert(table,data_post,data="Success"):
         columns = ', '.join(data_post.keys())
         values = '", "'.join(str(v) for v in data_post.values())
         placeholders = ', '.join('?' * len(data_post))
-        sql = 'INSERT INTO %s (%s) VALUES ("%s")' % (table,columns, values)
+        sql = 'INSERT INTO %s (%s) VALUES ("%s")' % (table,columns, str(values))
         cur = db.query(sql)
         try:
             res=cur.lastrowid
