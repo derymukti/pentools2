@@ -2,14 +2,13 @@ flask
 flask_script
 Jinja2
 termcolor
-flask_sqlalchemy
 mysql-connector==2.1.4
 python-jose
 flask_session
-functools
 python-jose
-MySQL-python
 datetime
 redis
 basicauth
 requests
+Flask-MySQLdb
+PyMySQL
